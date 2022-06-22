@@ -1,6 +1,2 @@
-# tictactoe
-# Just Go to The Releases page to see the real stuff. 
-Tic Tac Toe in Python!
-Unix:Keep TicTacToe and tictactoe.py in the home folder. You must have Python3 installed.
-NT:BAT Files not tested, we do not have a windows PC. They may be completely wrong. You need Python3.
-# IMPORTANT: Repository Maintnence!
+# Welcome to The NEW Repository!
+The old one was very buggy and I preferred a new style of coding so yeah. I hope you can deal with it. MULTIPLAYER SUPPORT ONLY!
