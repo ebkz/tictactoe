@@ -1,5 +1,11 @@
 from random import randint
 
+def enter1to9(prompt):
+  # print prompt, ensure user will enter 1 to 9, and return int
+  choice = input(prompt)
+  if len(choice) != 1 or choice != '0':
+    print('This is not an option')
+
 class TicTacToe:
   def __init__(self):
     self.xo = 'X'
@@ -51,7 +57,7 @@ class TicTacToe:
       ebkz Group
       Me
       And... of course, Bob The Builder because he can do EVERYTHING!
-      Email me at [censored email adress.] Just find it on github
+      Email me at ebkzcontact@gmail.com
       ''')
       self.menu()
     #Easter Egg;)
@@ -78,7 +84,13 @@ class TicTacToe:
     #Board Layout
     print("Player 1's Turn!")
     choice = input('Choose: ')
-    if int(choice) > 9 or int(choice) < 1:
+    if len(choice) != 1:
+      print('This number or phrase is not a digit between 1 and 9')
+      self.playergame(board)
+    elif not ('1' <= choice <= '9'):
+      print('This is not a number between 1 and 9')
+      self.playergame(board)
+    elif int(choice) > 9 or int(choice) < 1:
       print('That is not an option. Restarting Turn...')
       self.playergame(board)
     elif int(choice) < 10 and int(choice) > 0 and board[int(choice)] != 'X' and board[int(choice)] != 'O':
@@ -110,15 +122,15 @@ class TicTacToe:
       print('Player 1 Won!')
       print(f'''
             |         |         
-      {board[1]}    |    {board[2]}    |    {board[3]}
+       {board[1]}    |    {board[2]}    |    {board[3]}
             |         |
    ---------|---------|---------
             |         |         
-      {board[4]}    |    {board[5]}    |    {board[6]}
+       {board[4]}    |    {board[5]}    |    {board[6]}
             |         |
    ---------|---------|---------
             |         |         
-      {board[7]}    |    {board[8]}    |    {board[9]}
+       {board[7]}    |    {board[8]}    |    {board[9]}
             |         |''')
       self.menu()
     #Check if player 1 won
@@ -137,6 +149,12 @@ class TicTacToe:
     #board layout again
     print("Player 2's Turn!")
     choice2 = input('Choose: ')
+    if len(choice2) != 1:
+      print('This number or phrase is not a digit between 1 and 9')
+      self.playergame(board)
+    elif not ('1' <= choice2 <= '9'):
+      print('This is not a number between 1 and 9')
+      self.playergame(board)
     if int(choice2) > 9 or int(choice2) < 1:
       print('That is not an option. Restarting Turn...')
       board[int(choice)] = int(choice)
@@ -184,3 +202,8 @@ class TicTacToe:
 
 game = TicTacToe()
 game.menu()
+#Bug List
+'''
+Cannot type non integers in to player moves. If I typed fg in Player 1's Choice, I would receive an error
+Check if the boards look right.
+'''
